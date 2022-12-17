@@ -2,41 +2,63 @@
 // Снипет (HTML): sel
 .select {
 	position: relative;
+	border-radius: 6px;
+	//overflow: hidden;
 	// .select__body
 	&__body {
 		position: relative;
+		@media (max-width: $mobile) {
+			padding-left: 15px;
+		}
 	}
 	// .select__title
 	&__title {
 		color: inherit;
 		text-align: left;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
+		background-color: $white;
 		cursor: pointer;
 		width: 100%;
-		border-radius: 4px;
 	}
 	// .select__value
 	&__value {
 		display: flex;
 		align-items: center;
-		height: rem(30);
+		height: rem(50);
 		padding: 0 rem(15);
 		gap: rem(10);
+		@media (max-width: $mobile) {
+			padding: 0;
+		}
 		> * {
 			flex: 1 1 auto;
 		}
 		&:after {
-			content: "";
-			align-self: stretch;
-			flex: 0 0 10px;
-			transition: all 0.3s ease 0s;
+			@extend %ic;
+			content: "\e904";
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			flex: 0 0 10px;
+			font-size: rem(8);
+
+			transition: all 0.3s ease 0s;
+			transform: rotate(90deg);
 			._select-open & {
-				transform: rotate(-180deg);
+				transform: rotate(-90deg);
 			}
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+		&::before {
+			@extend %ic;
+			content: "\e912";
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-self: stretch;
+			flex: 0 0 10px;
+			font-size: rem(16);
 		}
 		&._select-pseudo-label {
 			&::before {
@@ -56,17 +78,19 @@
 	}
 	// .select__options
 	&__options {
-		color: #000;
 		position: absolute;
-		top: 29px;
-		border-radius: 0 0 4px 4px;
+		color: $black;
+		top: 50px;
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
+
+		background-color: $white;
+
+		border: 1px solid #ebebeb;
+		border-radius: 0px 0px 6px 6px;
 		border-top: 0;
-		border: 1px solid #d9d9d9;
-		border-top: 0;
-		padding: 10px 0px 5px 0px;
+		border-top: 1px solid rgba(193, 193, 193, 0.3);
+		//padding: 15px 0px 15px 0px;
 	}
 	// .select__scroll
 	&__scroll {
@@ -86,14 +110,24 @@
 		width: 100%;
 		text-align: left;
 		cursor: pointer;
-		padding: 5px 15px;
+		padding: 15px 25px;
 		color: inherit;
+
+		line-height: math.div(19, 16);
+		letter-spacing: 0.03em;
+		color: $black;
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+		}
+		border-left: 3px solid transparent;
+
 		&._select-selected {
 			background-color: #eee;
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				background: #d9d9d9;
+				background-color: #f8f2f2;
+				border-left: 3px solid #63a60e;
 			}
 		}
 	}
@@ -115,6 +149,15 @@
 	&._select-disabled {
 	}
 	&._select-active {
+		color: $green-900;
+		font-weight: 600;
+		font-size: rem(14);
+		letter-spacing: 0.03em;
+		@media (max-width: $mobile) {
+			font-size: rem(18);
+			line-height: math.div(18, 18);
+			color: $dark-800;
+		}
 	}
 	&._select-focus {
 	}

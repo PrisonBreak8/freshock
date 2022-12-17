@@ -1,4 +1,140 @@
 <header class="header">
-	<div class="header__container">
+	<div class="header__top">
+		<div class="header__container">
+
+			<nav class="header__menu menu">
+				<div class="burger__btn">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+				</div>
+				<div class="menu__lists">
+					<ul class="menu__list">
+						<li class="menu__item"><a href="#" class="menu__link menu__link_del"><span>АдРЕС И ВРЕМЯ ДОСТАВКИ</span></a></li>
+						<li class="menu__item"><a href="#" class="menu__link menu__link_tel"><span>ГОРЯЧАЯ ЛИНИЯ 24/7</span></a></li>
+					</ul>
+				</div>
+				<div class="menu__body"></div>
+				<ul class="menu__block">
+					<li class="menu__about"><a href="#" class="menu__link-about">ДОСТАВКА</a></li>
+					<li class="menu__about"><a href="#" class="menu__link-about">О НАС</a></li>
+					<li class="menu__about"><a href="#" class="menu__link-about">НОВОСТИ</a></li>
+				</ul>
+			</nav>
+
+			<div data-da=".menu__body,767.98" class="burger-block">
+				<h2 class="burger-block__heading">
+					<a href="" class="burger-block__logo">
+						<img class="burger-block__picture" src="@img/logo-green.svg" alt="Логотип">
+						<img class="burger-block__desription-green" src="@img/logo-text-green.svg" alt="Логотип">
+					</a>
+				</h2>
+
+				<ul class="burger-block__registration">
+					<div class="burger-block__icon-user"></div>
+					<li data-da=".burger-block__icon-user,767.98" class="user__list-burger">
+						<a class="user__link-burger" href="#"><span>Регистрация</span></a>
+					</li>
+					<li data-da=".burger-block__icon-user,767.98" class="user__list-burger">
+						<a class="user__link-burger" href="#"><span>Вход</span></a>
+					</li>
+				</ul>
+
+				<div class="select-form"></div>
+
+				<div class="burger-block__contact contact">
+					<ul class="contact__navigation">
+						<li class="contact__list">
+							<a href="tel:+7907288365" class="contact__link contact__link_ico-tell"><span>+7 907 288 365</span><span class="sr-only">Позвонить</span></a>
+						</li>
+						<li class="contact__list">
+							<a href="#" class="contact__link contact__link_ico-navigation"><span> Санкт-Петербург, ул. Ленина, 1</span><span class="sr-only">Позвонить</span></a>
+						</li>
+					</ul>
+
+					<ul class="burger-block__social social">
+						<li class="social__list">
+							<a href="#" class="social__link social__link_facebook" target="_blank"><span class="sr-only">Фейс бук</span></a>
+						</li>
+						<li class="social__list">
+							<a href="#" class="social__link social__link_youtube" target="_blank"><span class="sr-only">Ютюб</span></a>
+						</li>
+						<li class="social__list">
+							<a href="#" class="social__link social__link_telegram" target="_blank"><span class="sr-only">Телеграм</span></a>
+						</li>
+						<li class="social__list">
+							<a href="#" class="social__link social__link_instagram" target="_blank"><span class="sr-only">Инстаграмм</span></a>
+						</li>
+					</ul>
+
+					<ul class="burger-block__items">
+						<li class="burger-block__about"><a href="#" class="burger-block__link-about">Доставка</a></li>
+						<li class="burger-block__about"><a href="#" class="burger-block__link-about">О нас</a></li>
+						<li class="burger-block__about"><a href="#" class="burger-block__link-about">Новости</a></li>
+						<li class="burger-block__about"><a href="#" class="burger-block__link-about">Контакты</a></li>
+						<li class="burger-block__about"><a href="#" class="burger-block__link-about">Акции</a></li>
+						<li class="burger-block__about"><a href="#" class="burger-block__link-about">Вакансии</a></li>
+						<li class="burger-block__about"><a href="#" class="burger-block__link-about">Отзывы</a></li>
+						<li class="burger-block__about"><a href="#" class="burger-block__link-about">Публичная оферта</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="header__main main-header">
+		<div class="main-header__container">
+			<div class="main-header__body">
+
+				<div class="main-header__items">
+					<h1 class="main-header__title">
+						<a class="main-header__logo logo" href="#">
+							<img class="logo__picture" src="@img/logo.svg" alt="Логотип">
+							<img class="logo__desription" src="@img/logo-text.svg" alt="Логотип">
+						</a>
+					</h1>
+
+					<div data-da=".select-form,767.98,2" class="main-header__select">
+						<select name="form[]" data-class-modif="form">
+							<option value="1" selected>Каталог продуктов</option>
+							<option value="2">Овощи и фрукты</option>
+							<option value="3">Бакалея</option>
+							<option value="4">Молочные продукты</option>
+							<option value="5">Хлеб</option>
+							<option value="6">Мясо</option>
+							<option value="7">Колбаса</option>
+							<option value="8">Рыба</option>
+							<option value="9">Алкоголь</option>
+							<option value="10">Напитки</option>
+							<option value="11">Торты</option>
+							<option value="12">Чай, кофе</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="main-header__search">
+					<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Найти в магазине ..." class="input">
+					<button class="button button_dark" type="button">ПОИСК</button>
+				</div>
+
+				<ul class="main-header__user user">
+					<li class="user__list">
+						<a class="user__link user__link_search" href="#"><span class="sr-only">Поиск</span></a>
+					</li>
+
+					<li data-da=".burger-block__icon-user,479.98" class="user__list">
+						<a class="user__link user__link_register" href="#"><span class="sr-only">Пользователь</span></a>
+					</li>
+
+					<li class="user__list">
+						<a class="user__link user__link_heart" href="#"><span class="sr-only">Избранное</span></a>
+					</li>
+
+					<li class="user__list">
+						<button class="user__link user__link_cart" type="button" aria-label="Корзина"></button>
+					</li>
+				</ul>
+
+			</div>
+		</div>
 	</div>
 </header>
