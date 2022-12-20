@@ -59,9 +59,11 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
 $pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$breakPoint: em(1580);
 $wdth: em(1100.98);
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
+$mobileTwo: em(600.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
 
 // Тип адаптива:

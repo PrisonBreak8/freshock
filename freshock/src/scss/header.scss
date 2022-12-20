@@ -1,7 +1,7 @@
 //====================================================================================================
 .header {
 	z-index: 100;
-	position: absolute;
+	//position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -56,8 +56,8 @@
 			}
 		}
 		&:focus {
-			box-shadow: 0px 0px 0px 3px #eff6e7;
-			border-radius: 3px;
+			box-shadow: 0 0 0 rem(3) #eff6e7;
+			border-radius: rem(3);
 		}
 		&:active {
 			color: #e0edcf;
@@ -74,7 +74,7 @@
 			&:before {
 				@extend %ic;
 				content: "\e906";
-				font-size: 22px;
+				font-size: rem(22);
 			}
 		}
 		// .menu__link_tel
@@ -82,7 +82,7 @@
 			&:before {
 				@extend %ic;
 				content: "\e909";
-				font-size: 22px;
+				font-size: rem(22);
 			}
 		}
 	}
@@ -97,8 +97,8 @@
 			}
 		}
 		&:focus {
-			box-shadow: 0px 0px 0px 3px #eff6e7;
-			border-radius: 3px;
+			box-shadow: 0 0 0 rem(3) #eff6e7;
+			border-radius: rem(3);
 		}
 		&:active {
 			color: #e0edcf;
@@ -175,8 +175,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		//min-height: rem(100);
-		@include adaptiveValue("height", 100, 55);
+		height: rem(100);
+		@media (max-width: $mobile) {
+			height: 60px;
+		}
 	}
 
 	// .main-header__items
@@ -192,7 +194,7 @@
 	// .main-header__select
 	&__select {
 		flex: 1 1 auto;
-		width: 240px;
+		width: rem(240);
 		@media (max-width: $mobile) {
 			width: 100%;
 		}
@@ -206,6 +208,16 @@
 		display: flex;
 		align-items: center;
 		column-gap: rem(14);
+		transition: opacity 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+		&:active {
+			box-shadow: 0 0 0 rem(3) #eff6e7;
+			border-radius: rem(3);
+		}
 	}
 	// .main-header__search
 	&__search {
@@ -229,17 +241,17 @@
 .logo {
 	// .logo__picture
 	&__picture {
-		height: 60px;
-		width: 55px;
+		height: rem(60);
+		width: rem(55);
 		@include adaptiveValue("width", 55, 37, 0, 991, 320);
-		@include adaptiveValue("height", 60, 40, 0, 991, 320);
+		//@include adaptiveValue("height", 60, 40, 0, 991, 320);
 	}
 	// .logo__desription
 	&__desription {
-		width: 130px;
-		height: 48px;
+		width: rem(130);
+		height: rem(48);
 		@include adaptiveValue("width", 130, 80, 0, 991, 320);
-		@include adaptiveValue("height", 48, 40, 0, 991, 320);
+		//@include adaptiveValue("height", 48, 40, 0, 991, 320);
 		@media (max-width: $mobileSmall) {
 			display: none;
 		}
@@ -336,7 +348,7 @@
 		flex-direction: row-reverse;
 		justify-content: flex-end;
 		column-gap: rem(15);
-		padding-left: 15px;
+		padding-left: rem(15);
 	}
 	// .burger-block__contact
 	&__contact {
@@ -419,7 +431,7 @@
 }
 .social {
 	color: $dark-800;
-	font-size: 28px;
+	font-size: rem(28);
 	display: flex;
 	align-items: center;
 	column-gap: rem(12);
