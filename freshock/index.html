@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221217173504">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221220190716">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,6 +156,731 @@
 		</header>
 		<main class="page">
 
+			<section class="page__main main-page">
+				<div class="main-page__controls">
+					<button type="button" class="main-page__arrow main-page__arrow_left _icon-icon-arrow-right"></button>
+					<button type="button" class="main-page__arrow main-page__arrow_right _icon-icon-arrow-right"></button>
+				</div>
+
+				<div class="swiper main-page__slider">
+					<div class="slider__wrapper swiper-wrapper">
+						<div class="main-page__slide main-page__slide_1 swiper-slide">
+							<div class="main-page__container">
+								<div class="main-page__content">
+									<h3 class="main-page__text">СВЕЖАЧОК ВАМ в ХАТУ</h3>
+									<h3 class="main-page__discount">Скидка -50%</h3>
+									<p class="main-page__sub-text">
+										Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
+									</p>
+									<button class="button button_green" type="button">Купить сейчас</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="main-page__slide main-page__slide_2 swiper-slide">
+							<div class="main-page__container">
+								<div class="main-page__content">
+									<h3 class="main-page__text">НАКРУТИ СЕБЕ ТОМАТОВ</h3>
+									<h3 class="main-page__discount">АКЦИЯ: 3 кг по цене 1</h3>
+									<p class="main-page__sub-text"></p>
+									<button class="button button_green" type="button">Купить сейчас</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="main-page__slide main-page__slide_3 swiper-slide">
+							<div class="main-page__container">
+								<div class="main-page__content">
+									<h3 class="main-page__text">Пусть остальные позеленеют от зависти</h3>
+									<h3 class="main-page__discount">Распродажа зелени</h3>
+									<p class="main-page__sub-text"></p>
+									<button class="button button_green" type="button">Купить сейчас</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pagination">
+						<button type="button" class="swiper-pagination slider-quality__pagging"></button>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__services services">
+				<div class="services__container">
+					<div class="services__items">
+						<article class="services__item item-services">
+							<div class="item-services__icon">
+								<img src="img/main-page/scooter.svg" alt="icon services">
+							</div>
+							<div class="item-services__description">
+								<h4 class="item-services__title">Бесплатная доставка</h4>
+								<p class="item-services__text">Для заказов на сумму от 500 ₽</p>
+							</div>
+						</article>
+
+						<article class="services__item item-services">
+							<div class="item-services__icon">
+								<img src="img/main-page/return-box.svg" alt="icon services">
+							</div>
+							<div class="item-services__description">
+								<h4 class="item-services__title">Возврат товара</h4>
+								<p class="item-services__text">Если товары были испорчены</p>
+							</div>
+						</article>
+
+						<article class="services__item item-services">
+							<div class="item-services__icon">
+								<img src="img/main-page/hours.svg" alt="icon services">
+							</div>
+							<div class="item-services__description">
+								<h4 class="item-services__title">Поддержка 24/7</h4>
+								<div class="item-services__text">Лучшие операторы</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__top-products top-products">
+				<div class="top-products__container">
+					<div class="top-products__title title">
+						<h2 class="title__value">Топовые товары</h2>
+					</div>
+
+					<div class="top-products__box">
+						<ul class="list">
+							<button type="button" data-id="all" class="list__item tab-active">Все товары</button>
+							<button type="button" data-id="fruit" class="list__item">Фрукты</button>
+							<button type="button" data-id="vegetables" class="list__item">овощи</button>
+							<button type="button" data-id="drinks" class="list__item">напитки</button>
+							<button type="button" data-id="grocery" class="list__item">бакалея</button>
+						</ul>
+					</div>
+
+					<div class="body">
+						<div class="body__row">
+							<div class="body__item fruit">
+								<article class="body__card">
+									<!-- Badges -->
+									<div class="badge">
+										<span class="badge sr-only">Бейджи</span>
+										<div class="badge__stock">
+											<span class="badge__card badge__card_new">НОВИНКА</span>
+											<span class="badge__card badge__card_discount">-50%</span>
+											<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+										</div>
+										<button class="badge__card-cart _icon-icon-heart"></button>
+									</div>
+									<!-- Badges -->
+									<!-- HOVER SEARCH -->
+									<div href="#" class="body__picture">
+										<a class="body__picyure-link" href="#">
+											<picture><source srcset="img/main-page/pineapple.webp" type="image/webp"><img src="img/main-page/pineapple.jpg" alt="Ананас"></picture>
+										</a>
+										<div class="body__overlay">
+											<a href="#" class="body__search _icon-icon-search"></a>
+										</div>
+									</div>
+									<!-- HOVER SEARCH -->
+									<div class="body__block">
+										<div class="body__heading">
+											<a href="#" class="body__title"> <span>Ананас, 1кг </span></a>
+										</div>
+										<div class="body__footer">
+											<div class="body__all-price">
+												<span class="body__old-price rub">1999</span>
+												<span class="body__price rub">999</span>
+											</div>
+											<button type="button" class="body__cart _icon-icon-cart"></button>
+										</div>
+									</div>
+								</article>
+							</div>
+
+							<div class="body__item fruit">
+								<article class="body__card">
+									<!-- Badges -->
+									<div class="badge">
+										<span class="badge sr-only">Бейджи</span>
+										<div class="badge__stock">
+											<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+											<span class="badge__card badge__card_discount sr-only">-50%</span>
+											<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+										</div>
+										<button class="badge__card-cart _icon-icon-heart"></button>
+									</div>
+									<!-- Badges -->
+									<!-- HOVER SEARCH -->
+									<div href="#" class="body__picture">
+										<a class="body__picyure-link" href="#">
+											<picture><source srcset="img/main-page/lemon.webp" type="image/webp"><img src="img/main-page/lemon.jpg" alt="Лимон"></picture>
+										</a>
+										<div class="body__overlay">
+											<a href="#" class="body__search _icon-icon-search"></a>
+										</div>
+									</div>
+									<!-- HOVER SEARCH -->
+									<div class="body__block">
+										<div class="body__heading">
+											<a href="#" class="body__title"> <span>Лимон, 1кг</span></a>
+										</div>
+										<div class="body__footer">
+											<div class="body__all-price">
+												<span class="body__old-price rub sr-only">1999</span>
+												<span class="body__price rub">199</span>
+											</div>
+											<button type="button" class="body__cart _icon-icon-cart"></button>
+										</div>
+									</div>
+								</article>
+							</div>
+
+							<div class="body__item fruit">
+								<article class="body__card">
+									<!-- Badges -->
+									<div class="badge">
+										<span class="badge sr-only">Бейджи</span>
+										<div class="badge__stock">
+											<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+											<span class="badge__card badge__card_discount sr-only">-50%</span>
+											<span class="badge__card badge__card_hit">ХИТ</span>
+										</div>
+										<button class="badge__card-cart _icon-icon-heart"></button>
+									</div>
+									<!-- Badges -->
+									<!-- HOVER SEARCH -->
+									<div href="#" class="body__picture">
+										<a class="body__picyure-link" href="#">
+											<picture><source srcset="img/main-page/pitahaya.webp" type="image/webp"><img src="img/main-page/pitahaya.jpg" alt="Питахайя красная "></picture>
+										</a>
+										<div class="body__overlay">
+											<a href="#" class="body__search _icon-icon-search"></a>
+										</div>
+									</div>
+									<!-- HOVER SEARCH -->
+									<div class="body__block">
+										<div class="body__heading">
+											<a href="#" class="body__title"> <span>Питахайя красная с белой мякотью, 1шт</span></a>
+										</div>
+										<div class="body__footer">
+											<div class="body__all-price">
+												<span class="body__old-price rub sr-only">1019</span>
+												<span class="body__price rub">1019</span>
+											</div>
+											<button type="button" class="body__cart _icon-icon-cart"></button>
+										</div>
+									</div>
+								</article>
+							</div>
+
+							<div class="body__item grocery">
+								<article class="body__card">
+									<!-- Badges -->
+									<div class="badge">
+										<span class="badge sr-only">Бейджи</span>
+										<div class="badge__stock">
+											<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+											<span class="badge__card badge__card_discount sr-only">-50%</span>
+											<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+										</div>
+										<button class="badge__card-cart _icon-icon-heart"></button>
+									</div>
+									<!-- Badges -->
+									<!-- HOVER SEARCH -->
+									<div href="#" class="body__picture">
+										<a class="body__picyure-link" href="#">
+											<picture><source srcset="img/main-page/ketchup.webp" type="image/webp"><img src="img/main-page/ketchup.jpg" alt="Кетчуп томатный детский"></picture>
+										</a>
+										<div class="body__overlay">
+											<a href="#" class="body__search _icon-icon-search"></a>
+										</div>
+									</div>
+									<!-- HOVER SEARCH -->
+									<div class="body__block">
+										<div class="body__heading">
+											<a href="#" class="body__title"> <span>Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт</span></a>
+										</div>
+										<div class="body__footer">
+											<div class="body__all-price">
+												<span class="body__old-price rub sr-only">1019</span>
+												<span class="body__price rub">600</span>
+											</div>
+											<button type="button" class="body__cart _icon-icon-cart"></button>
+										</div>
+									</div>
+								</article>
+							</div>
+
+							<div class="body__item vegetables">
+								<article class="body__card">
+									<!-- Badges -->
+									<div class="badge">
+										<span class="badge sr-only">Бейджи</span>
+										<div class="badge__stock">
+											<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+											<span class="badge__card badge__card_discount sr-only">-50%</span>
+											<span class="badge__card badge__card_hit">ХИТ</span>
+										</div>
+										<button class="badge__card-cart _icon-icon-heart"></button>
+									</div>
+									<!-- Badges -->
+									<!-- HOVER SEARCH -->
+									<div href="#" class="body__picture">
+										<a class="body__picyure-link" href="#">
+											<picture><source srcset="img/main-page/carot-card.webp" type="image/webp"><img src="img/main-page/carot-card.jpg" alt="Морковь молодая "></picture>
+										</a>
+										<div class="body__overlay">
+											<a href="#" class="body__search _icon-icon-search"></a>
+										</div>
+									</div>
+									<!-- HOVER SEARCH -->
+									<div class="body__block">
+										<div class="body__heading">
+											<a href="#" class="body__title"> <span>Морковь молодая с бабушкиной грядки, 1кг</span></a>
+										</div>
+										<div class="body__footer">
+											<div class="body__all-price">
+												<span class="body__old-price rub sr-only">1019</span>
+												<span class="body__price rub">49</span>
+											</div>
+											<button type="button" class="body__cart _icon-icon-cart"></button>
+										</div>
+									</div>
+								</article>
+							</div>
+
+							<div class="body__item drinks">
+								<article class="body__card">
+									<!-- Badges -->
+									<div class="badge">
+										<span class="badge sr-only">Бейджи</span>
+										<div class="badge__stock">
+											<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+											<span class="badge__card badge__card_discount">-50%</span>
+											<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+										</div>
+										<button class="badge__card-cart _icon-icon-heart"></button>
+									</div>
+									<!-- Badges -->
+									<!-- HOVER SEARCH -->
+									<div href="#" class="body__picture">
+										<a class="body__picyure-link" href="#">
+											<picture><source srcset="img/main-page/beverages.webp" type="image/webp"><img src="img/main-page/beverages.jpg" alt="Напиток сокосодержащий"></picture>
+										</a>
+										<div class="body__overlay">
+											<a href="#" class="body__search _icon-icon-search"></a>
+										</div>
+									</div>
+									<!-- HOVER SEARCH -->
+									<div class="body__block">
+										<div class="body__heading">
+											<a href="#" class="body__title"> <span>Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...</span></a>
+										</div>
+										<div class="body__footer">
+											<div class="body__all-price">
+												<span class="body__old-price rub">299</span>
+												<span class="body__price rub">199</span>
+											</div>
+											<button type="button" class="body__cart _icon-icon-cart"></button>
+										</div>
+									</div>
+								</article>
+							</div>
+
+							<div class="body__item drinks">
+								<article class="body__card">
+									<!-- Badges -->
+									<div class="badge">
+										<span class="badge sr-only">Бейджи</span>
+										<div class="badge__stock">
+											<span class="badge__card badge__card_new">НОВИНКА</span>
+											<span class="badge__card badge__card_discount sr-only">-50%</span>
+											<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+										</div>
+										<button class="badge__card-cart _icon-icon-heart"></button>
+									</div>
+									<!-- Badges -->
+									<!-- HOVER SEARCH -->
+									<div href="#" class="body__picture">
+										<a class="body__picyure-link" href="#">
+											<picture><source srcset="img/main-page/coffee.webp" type="image/webp"><img src="img/main-page/coffee.jpg" alt="Кофе с коноплей органический"></picture>
+										</a>
+										<div class="body__overlay">
+											<a href="#" class="body__search _icon-icon-search"></a>
+										</div>
+									</div>
+									<!-- HOVER SEARCH -->
+									<div class="body__block">
+										<div class="body__heading">
+											<a href="#" class="body__title"><span>Кофе с коноплей органический Caffé Salomoni 250г</span></a>
+										</div>
+										<div class="body__footer">
+											<div class="body__all-price">
+												<span class="body__old-price rub sr-only">299</span>
+												<span class="body__price rub">877</span>
+											</div>
+											<button type="button" class="body__cart _icon-icon-cart"></button>
+										</div>
+									</div>
+								</article>
+							</div>
+
+							<div class="body__item vegetables">
+								<article class="body__card">
+									<!-- Badges -->
+									<div class="badge">
+										<span class="badge sr-only">Бейджи</span>
+										<div class="badge__stock">
+											<span class="badge__card badge__card_new">НОВИНКА</span>
+											<span class="badge__card badge__card_discount sr-only">-50%</span>
+											<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+										</div>
+										<button class="badge__card-cart _icon-icon-heart"></button>
+									</div>
+									<!-- Badges -->
+									<!-- HOVER SEARCH -->
+									<div href="#" class="body__picture">
+										<a class="body__picyure-link" href="#">
+											<picture><source srcset="img/main-page/orangepepper.webp" type="image/webp"><img src="img/main-page/orangepepper.jpg" alt="Перец оранжевый"></picture>
+										</a>
+										<div class="body__overlay">
+											<a href="#" class="body__search _icon-icon-search"></a>
+										</div>
+									</div>
+									<!-- HOVER SEARCH -->
+									<div class="body__block">
+										<div class="body__heading">
+											<a href="#" class="body__title"><span>Перец оранжевый, 1кг</span></a>
+										</div>
+										<div class="body__footer">
+											<div class="body__all-price">
+												<span class="body__old-price rub sr-only">299</span>
+												<span class="body__price rub">349</span>
+											</div>
+											<button type="button" class="body__cart _icon-icon-cart"></button>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+
+					<div data-showmore="items" class="block">
+						<div data-showmore-content class="block__content">
+							<div class="body__row">
+								<div class="body__item fruit">
+									<article class="body__card">
+										<!-- Badges -->
+										<div class="badge">
+											<span class="badge sr-only">Бейджи</span>
+											<div class="badge__stock">
+												<span class="badge__card badge__card_new">НОВИНКА</span>
+												<span class="badge__card badge__card_discount">-50%</span>
+												<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+											</div>
+											<button class="badge__card-cart _icon-icon-heart"></button>
+										</div>
+										<!-- Badges -->
+										<!-- HOVER SEARCH -->
+										<div href="#" class="body__picture">
+											<a class="body__picyure-link" href="#">
+												<picture><source srcset="img/main-page/pineapple.webp" type="image/webp"><img src="img/main-page/pineapple.jpg" alt="Ананас"></picture>
+											</a>
+											<div class="body__overlay">
+												<a href="#" class="body__search _icon-icon-search"></a>
+											</div>
+										</div>
+										<!-- HOVER SEARCH -->
+										<div class="body__block">
+											<div class="body__heading">
+												<a href="#" class="body__title"> <span>Ананас, 1кг </span></a>
+											</div>
+											<div class="body__footer">
+												<div class="body__all-price">
+													<span class="body__old-price rub">1999</span>
+													<span class="body__price rub">999</span>
+												</div>
+												<button type="button" class="body__cart _icon-icon-cart"></button>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="body__item fruit">
+									<article class="body__card">
+										<!-- Badges -->
+										<div class="badge">
+											<span class="badge sr-only">Бейджи</span>
+											<div class="badge__stock">
+												<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+												<span class="badge__card badge__card_discount sr-only">-50%</span>
+												<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+											</div>
+											<button class="badge__card-cart _icon-icon-heart"></button>
+										</div>
+										<!-- Badges -->
+										<!-- HOVER SEARCH -->
+										<div href="#" class="body__picture">
+											<a class="body__picyure-link" href="#">
+												<picture><source srcset="img/main-page/lemon.webp" type="image/webp"><img src="img/main-page/lemon.jpg" alt="Лимон"></picture>
+											</a>
+											<div class="body__overlay">
+												<a href="#" class="body__search _icon-icon-search"></a>
+											</div>
+										</div>
+										<!-- HOVER SEARCH -->
+										<div class="body__block">
+											<div class="body__heading">
+												<a href="#" class="body__title"> <span>Лимон, 1кг</span></a>
+											</div>
+											<div class="body__footer">
+												<div class="body__all-price">
+													<span class="body__old-price rub sr-only">1999</span>
+													<span class="body__price rub">199</span>
+												</div>
+												<button type="button" class="body__cart _icon-icon-cart"></button>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="body__item fruit">
+									<article class="body__card">
+										<!-- Badges -->
+										<div class="badge">
+											<span class="badge sr-only">Бейджи</span>
+											<div class="badge__stock">
+												<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+												<span class="badge__card badge__card_discount sr-only">-50%</span>
+												<span class="badge__card badge__card_hit">ХИТ</span>
+											</div>
+											<button class="badge__card-cart _icon-icon-heart"></button>
+										</div>
+										<!-- Badges -->
+										<!-- HOVER SEARCH -->
+										<div href="#" class="body__picture">
+											<a class="body__picyure-link" href="#">
+												<picture><source srcset="img/main-page/pitahaya.webp" type="image/webp"><img src="img/main-page/pitahaya.jpg" alt="Питахайя красная "></picture>
+											</a>
+											<div class="body__overlay">
+												<a href="#" class="body__search _icon-icon-search"></a>
+											</div>
+										</div>
+										<!-- HOVER SEARCH -->
+										<div class="body__block">
+											<div class="body__heading">
+												<a href="#" class="body__title"> <span>Питахайя красная с белой мякотью, 1шт</span></a>
+											</div>
+											<div class="body__footer">
+												<div class="body__all-price">
+													<span class="body__old-price rub sr-only">1019</span>
+													<span class="body__price rub">1019</span>
+												</div>
+												<button type="button" class="body__cart _icon-icon-cart"></button>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="body__item grocery">
+									<article class="body__card">
+										<!-- Badges -->
+										<div class="badge">
+											<span class="badge sr-only">Бейджи</span>
+											<div class="badge__stock">
+												<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+												<span class="badge__card badge__card_discount sr-only">-50%</span>
+												<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+											</div>
+											<button class="badge__card-cart _icon-icon-heart"></button>
+										</div>
+										<!-- Badges -->
+										<!-- HOVER SEARCH -->
+										<div href="#" class="body__picture">
+											<a class="body__picyure-link" href="#">
+												<picture><source srcset="img/main-page/ketchup.webp" type="image/webp"><img src="img/main-page/ketchup.jpg" alt="Кетчуп томатный детский"></picture>
+											</a>
+											<div class="body__overlay">
+												<a href="#" class="body__search _icon-icon-search"></a>
+											</div>
+										</div>
+										<!-- HOVER SEARCH -->
+										<div class="body__block">
+											<div class="body__heading">
+												<a href="#" class="body__title"> <span>Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт</span></a>
+											</div>
+											<div class="body__footer">
+												<div class="body__all-price">
+													<span class="body__old-price rub sr-only">1019</span>
+													<span class="body__price rub">600</span>
+												</div>
+												<button type="button" class="body__cart _icon-icon-cart"></button>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="body__item vegetables">
+									<article class="body__card">
+										<!-- Badges -->
+										<div class="badge">
+											<span class="badge sr-only">Бейджи</span>
+											<div class="badge__stock">
+												<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+												<span class="badge__card badge__card_discount sr-only">-50%</span>
+												<span class="badge__card badge__card_hit">ХИТ</span>
+											</div>
+											<button class="badge__card-cart _icon-icon-heart"></button>
+										</div>
+										<!-- Badges -->
+										<!-- HOVER SEARCH -->
+										<div href="#" class="body__picture">
+											<a class="body__picyure-link" href="#">
+												<picture><source srcset="img/main-page/carot-card.webp" type="image/webp"><img src="img/main-page/carot-card.jpg" alt="Морковь молодая "></picture>
+											</a>
+											<div class="body__overlay">
+												<a href="#" class="body__search _icon-icon-search"></a>
+											</div>
+										</div>
+										<!-- HOVER SEARCH -->
+										<div class="body__block">
+											<div class="body__heading">
+												<a href="#" class="body__title"> <span>Морковь молодая с бабушкиной грядки, 1кг</span></a>
+											</div>
+											<div class="body__footer">
+												<div class="body__all-price">
+													<span class="body__old-price rub sr-only">1019</span>
+													<span class="body__price rub">49</span>
+												</div>
+												<button type="button" class="body__cart _icon-icon-cart"></button>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="body__item drinks">
+									<article class="body__card">
+										<!-- Badges -->
+										<div class="badge">
+											<span class="badge sr-only">Бейджи</span>
+											<div class="badge__stock">
+												<span class="badge__card badge__card_new sr-only">НОВИНКА</span>
+												<span class="badge__card badge__card_discount">-50%</span>
+												<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+											</div>
+											<button class="badge__card-cart _icon-icon-heart"></button>
+										</div>
+										<!-- Badges -->
+										<!-- HOVER SEARCH -->
+										<div href="#" class="body__picture">
+											<a class="body__picyure-link" href="#">
+												<picture><source srcset="img/main-page/beverages.webp" type="image/webp"><img src="img/main-page/beverages.jpg" alt="Напиток сокосодержащий"></picture>
+											</a>
+											<div class="body__overlay">
+												<a href="#" class="body__search _icon-icon-search"></a>
+											</div>
+										</div>
+										<!-- HOVER SEARCH -->
+										<div class="body__block">
+											<div class="body__heading">
+												<a href="#" class="body__title"> <span>Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...</span></a>
+											</div>
+											<div class="body__footer">
+												<div class="body__all-price">
+													<span class="body__old-price rub">299</span>
+													<span class="body__price rub">199</span>
+												</div>
+												<button type="button" class="body__cart _icon-icon-cart"></button>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="body__item drinks">
+									<article class="body__card">
+										<!-- Badges -->
+										<div class="badge">
+											<span class="badge sr-only">Бейджи</span>
+											<div class="badge__stock">
+												<span class="badge__card badge__card_new">НОВИНКА</span>
+												<span class="badge__card badge__card_discount sr-only">-50%</span>
+												<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+											</div>
+											<button class="badge__card-cart _icon-icon-heart"></button>
+										</div>
+										<!-- Badges -->
+										<!-- HOVER SEARCH -->
+										<div href="#" class="body__picture">
+											<a class="body__picyure-link" href="#">
+												<picture><source srcset="img/main-page/coffee.webp" type="image/webp"><img src="img/main-page/coffee.jpg" alt="Кофе с коноплей органический"></picture>
+											</a>
+											<div class="body__overlay">
+												<a href="#" class="body__search _icon-icon-search"></a>
+											</div>
+										</div>
+										<!-- HOVER SEARCH -->
+										<div class="body__block">
+											<div class="body__heading">
+												<a href="#" class="body__title"><span>Кофе с коноплей органический Caffé Salomoni 250г</span></a>
+											</div>
+											<div class="body__footer">
+												<div class="body__all-price">
+													<span class="body__old-price rub sr-only">299</span>
+													<span class="body__price rub">877</span>
+												</div>
+												<button type="button" class="body__cart _icon-icon-cart"></button>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="body__item vegetables">
+									<article class="body__card">
+										<!-- Badges -->
+										<div class="badge">
+											<span class="badge sr-only">Бейджи</span>
+											<div class="badge__stock">
+												<span class="badge__card badge__card_new">НОВИНКА</span>
+												<span class="badge__card badge__card_discount sr-only">-50%</span>
+												<span class="badge__card badge__card_hit sr-only">ХИТ</span>
+											</div>
+											<button class="badge__card-cart _icon-icon-heart"></button>
+										</div>
+										<!-- Badges -->
+										<!-- HOVER SEARCH -->
+										<div href="#" class="body__picture">
+											<a class="body__picyure-link" href="#">
+												<picture><source srcset="img/main-page/orangepepper.webp" type="image/webp"><img src="img/main-page/orangepepper.jpg" alt="Перец оранжевый"></picture>
+											</a>
+											<div class="body__overlay">
+												<a href="#" class="body__search _icon-icon-search"></a>
+											</div>
+										</div>
+										<!-- HOVER SEARCH -->
+										<div class="body__block">
+											<div class="body__heading">
+												<a href="#" class="body__title"><span>Перец оранжевый, 1кг</span></a>
+											</div>
+											<div class="body__footer">
+												<div class="body__all-price">
+													<span class="body__old-price rub sr-only">299</span>
+													<span class="body__price rub">349</span>
+												</div>
+												<button type="button" class="body__cart _icon-icon-cart"></button>
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+						<button hidden data-showmore-button type="button" class="block__more button button_white">
+							<span>Показать еще</span>
+							<span>Скыть</span>
+						</button>
+					</div>
+				</div>
+			</section>
+
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -172,7 +897,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20221217173504"></script>
+	<script src="js/app.min.js?_v=20221220190716"></script>
 </body>
 
 </html>
