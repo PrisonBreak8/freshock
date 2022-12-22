@@ -403,6 +403,68 @@
             return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
         }
     };
+    function formRating() {
+        const ratings = document.querySelectorAll(".rating");
+        if (ratings.length > 0) initRatings();
+        function initRatings() {
+            let ratingActive, ratingValue;
+            for (let index = 0; index < ratings.length; index++) {
+                const rating = ratings[index];
+                initRating(rating);
+            }
+            function initRating(rating) {
+                initRatingVars(rating);
+                setRatingActiveWidth();
+                if (rating.classList.contains("rating_set")) setRating(rating);
+            }
+            function initRatingVars(rating) {
+                ratingActive = rating.querySelector(".rating__active");
+                ratingValue = rating.querySelector(".rating__value");
+            }
+            function setRatingActiveWidth(index = ratingValue.innerHTML) {
+                const ratingActiveWidth = index / .05;
+                ratingActive.style.width = `${ratingActiveWidth}%`;
+            }
+            function setRating(rating) {
+                const ratingItems = rating.querySelectorAll(".rating__item");
+                for (let index = 0; index < ratingItems.length; index++) {
+                    const ratingItem = ratingItems[index];
+                    ratingItem.addEventListener("mouseenter", (function(e) {
+                        initRatingVars(rating);
+                        setRatingActiveWidth(ratingItem.value);
+                    }));
+                    ratingItem.addEventListener("mouseleave", (function(e) {
+                        setRatingActiveWidth();
+                    }));
+                    ratingItem.addEventListener("click", (function(e) {
+                        initRatingVars(rating);
+                        if (rating.dataset.ajax) setRatingValue(ratingItem.value, rating); else {
+                            ratingValue.innerHTML = index + 1;
+                            setRatingActiveWidth();
+                        }
+                    }));
+                }
+            }
+            async function setRatingValue(value, rating) {
+                if (!rating.classList.contains("rating_sending")) {
+                    rating.classList.add("rating_sending");
+                    let response = await fetch("rating.json", {
+                        method: "GET"
+                    });
+                    if (response.ok) {
+                        const result = await response.json();
+                        const newRating = result.newRating;
+                        ratingValue.innerHTML = newRating;
+                        setRatingActiveWidth();
+                        rating.classList.remove("rating_sending");
+                    } else {
+                        alert("Ошибка");
+                        rating.classList.remove("rating_sending");
+                    }
+                }
+            }
+        }
+    }
     class SelectConstructor {
         constructor(props, data = null) {
             let defaultConfig = {
@@ -4242,6 +4304,41 @@
             }));
         }
     }
+    const stockList = document.querySelector(".stock__list");
+    const bodyItems = document.querySelectorAll(".cards__stock ");
+    const stockItems = document.querySelectorAll(".stock__item");
+    if (list) {
+        function filter() {
+            stockList.addEventListener("click", (event => {
+                const targetId = event.target.dataset.id;
+                const target = event.target;
+                if (target.classList.contains("stock__item")) {
+                    stockItems.forEach((listItem => listItem.classList.remove("tab-active")));
+                    target.classList.add("tab-active");
+                }
+                console.log(targetId);
+                switch (targetId) {
+                  case "all":
+                    getItems("cards__stock");
+                    break;
+
+                  case "new":
+                    getItems(targetId);
+                    break;
+
+                  case "hit":
+                    getItems(targetId);
+                    break;
+                }
+            }));
+        }
+        filter();
+        function getItems(className) {
+            bodyItems.forEach((item => {
+                if (item.classList.contains(className)) item.style.display = "block"; else item.style.display = "none";
+            }));
+        }
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();
@@ -4250,4 +4347,5 @@
         viewPass: false,
         autoHeight: false
     });
+    formRating();
 })();
