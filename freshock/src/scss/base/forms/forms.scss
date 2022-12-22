@@ -1,6 +1,8 @@
 //<FORM>
 // Снипет (HTML):
 .form {
+	position: relative;
+	display: flex;
 	&__row {
 	}
 	&__column {
@@ -12,6 +14,12 @@
 	&__button {
 	}
 	&__error {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		color: red;
+		font-size: rem(12);
+		transform: translate(5%, 5px);
 	}
 }
 //</FORM>
@@ -38,7 +46,7 @@
 
 // <RATING>
 // Снипет (HTML): rating
-// @import "rating";
+@import "rating";
 
 // <QUANTITY>
 // Снипет (HTML): qa

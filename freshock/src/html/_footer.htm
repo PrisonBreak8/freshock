@@ -1,4 +1,88 @@
 <footer class="footer">
 	<div class="footer__container">
+
+		<h2 class="footer__logo-title">
+			<a href="#" class="footer__logo">
+				<img src="@img/logo.svg" alt="Логотип">
+				<img src="@img/logo-text.svg" alt="Логотип">
+			</a>
+		</h2>
+		<div class="footer__top">
+			<div class="footer__column">
+				<div class="footer__subscribe">
+					<p class="footer__text">Следите за нашими акциями</p>
+
+					<form class="form" action="#">
+						<div class="form__block">
+							<input data-validate data-required="email" autocomplete="off" type="email" name="form[email]" data-error="Error,enter your email" placeholder="email@email.com" class="form__input">
+						</div>
+						<div class="form__button">
+							<button type="submit" class="button button_green-small">ПОДПИСАТЬСЯ</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="footer__menu">
+				<ul class="footer__items">
+					<li class="footer__item"><a href="#" class="footer__link">О нас</a></li>
+					<li class="footer__item"><a href="#" class="footer__link">Контакты</a></li>
+					<li class="footer__item"><a href="#" class="footer__link">Публичная оферта</a></li>
+					<li class="footer__md1"></li>
+				</ul>
+
+				<ul class="footer__items">
+					<li data-da=".footer__md1,479.98" class="footer__item"><a href="#" class="footer__link ">Оплата и доставка</a></li>
+					<li class="footer__item"><a href="#" class="footer__link">Вакансии</a></li>
+					<li class="footer__item"><a href="#" class="footer__link">Акции</a></li>
+					<li class="footer__md2"></li>
+				</ul>
+
+				<ul class="footer__items footer__items_display-none">
+					<li data-da=".footer__md2,479.98" class="footer__item"><a href="#" class="footer__link">Отзывы</a></li>
+					<li data-da=".footer__md2,479.98" class="footer__item"><a href="#" class="footer__link"></a>Новости</li>
+				</ul>
+			</div>
+
+			<div class="footer__location">
+				<div class="footer__position">
+					<a href="tel:+7907288365" class="footer__phone">Горячая линия<span>+7 907 288 365</span><span class="sr-only">Позвонить</span></a>
+					<a href="#" class="footer__adress"><span> Санкт-Петербург, ул. Ленина, 1</span><span class="sr-only">Адрес</span></a>
+				</div>
+				<ul class="footer__social">
+					<li class="footer__list">
+						<a href="" class="footer__link-social footer__link-social_facebook"></a>
+					</li>
+					<li class="footer__list">
+						<a href="" class="footer__link-social footer__link-social_youtube"></a>
+					</li>
+					<li class="footer__list">
+						<a href="" class="footer__link-social footer__link-social_telegram"></a>
+					</li>
+					<li class="footer__list">
+						<a href="" class="footer__link-social footer__link-social_instagram"></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
 	</div>
+
+	<div class="footer__bottom bottom">
+		<div class="bottom__container">
+			<div class="bottom__rights">
+				<p>© 2023 ФРЕШОК</p>
+			</div>
+			<div class="bottom__payments">
+				<a class="bottom__visa" href="#">
+					<img src="@img/main-page/visa.svg" alt="Виза">
+				</a>
+				<a class="bottom__mc" href="#">
+					<img src="@img/main-page/mc.svg" alt="Мастер кард">
+				</a>
+			</div>
+		</div>
+	</div>
+
 </footer>

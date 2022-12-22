@@ -29,3 +29,37 @@ textarea.input {
 	resize: none;
 	padding: 0px 0px;
 }
+//========================================================================================================================================================
+.form__input {
+	&._form-focus {
+		filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.25));
+	}
+}
+.form {
+	// .form__block
+	&__block {
+		&._form-focus {
+			box-shadow: 0px 0px 0px 3px #e0edcf;
+			border-radius: 3px;
+		}
+	}
+	// .form__input
+	&__input {
+		width: 100%;
+		display: block;
+		padding: 0px 15px;
+		height: rem(40);
+		border-radius: rem(6) 0 0 rem(6);
+		&::placeholder {
+			font-size: rem(14);
+			letter-spacing: 0.03em;
+			color: $dark-800;
+		}
+		&._form-error {
+			color: red;
+		}
+	}
+	// .form__button
+	&__button {
+	}
+}

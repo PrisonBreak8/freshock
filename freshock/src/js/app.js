@@ -90,7 +90,7 @@ flsForms.formFieldsInit({
 // flsForms.formQuantity();
 
 /* Модуль звездного рейтинга */
-// flsForms.formRating();
+flsForms.formRating();
 
 /* Модуль работы с select. */
 import './libs/select.js'
