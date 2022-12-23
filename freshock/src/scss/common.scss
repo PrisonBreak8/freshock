@@ -26,15 +26,26 @@
 	// .page__stock
 	&__stock {
 	}
+	// .page__brands
+	&__brands {
+	}
+	// .page__news
+	&__news {
+	}
 }
 //========================================================================================================================================================
 .title {
+	text-align: center;
+	// .title_text-left
+	&_text-left {
+		text-align: left;
+	}
 	// .title__value
 	&__value {
 		font-family: "Ruda";
 		font-weight: 600;
 		@include adaptiveValue("font-size", 32, 24);
-		text-align: center;
+
 		letter-spacing: 0.03em;
 		text-transform: uppercase;
 	}

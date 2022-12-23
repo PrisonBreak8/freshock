@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -98,6 +98,67 @@ function initSliders() {
 				},
 			},
 			*/
+			// События
+			on: {
+
+			}
+		});
+	}
+
+	// Проверяем, есть ли слайдер на стронице
+
+	if (document.querySelector('.brands__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.brands__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Autoplay],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 6,
+			spaceBetween: 0,
+			speed: 800,
+			autoHeight: false,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+
+
+			// Брейкпоинты
+			breakpoints: {
+				320: {
+					slidesPerView: 2,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				479: {
+					slidesPerView: 3,
+					//spaceBetween: 20,
+				},
+				767: {
+					slidesPerView: 4,
+					//spaceBetween: 20,
+				},
+				991: {
+					slidesPerView: 5,
+					//spaceBetween: 30,
+				},
+				1100: {
+					slidesPerView: 6,
+
+				},
+			},
+
 			// События
 			on: {
 

@@ -736,3 +736,204 @@
 	}
 }
 //========================================================================================================================================================
+.brands {
+	@include adaptiveValue("padding-top", 70, 50);
+
+	// .brands__container
+	&__container {
+	}
+	// .brands__slider
+	&__slider {
+	}
+	// .brands__wrapper
+	&__wrapper {
+		align-items: center;
+		//justify-content: center !important;
+	}
+	// .brands__flex-box
+	&__flex-box {
+	}
+	// .brands__slide
+	&__slide {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	// .brands__icon
+	&__icon {
+		opacity: 0.5;
+		transition: opacity 0.3s;
+		cursor: pointer;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	// .brands__svg-sprite
+	&__svg-sprite {
+		width: 80px;
+		height: 34px;
+	}
+	// .brands__svg-dr-pepper
+	&__svg-dr-pepper {
+		width: 80px;
+		height: 58px;
+	}
+	// .brands__svg-coca-cola
+	&__svg-coca-cola {
+		width: 80px;
+		height: 26px;
+	}
+	// .brands__svg-pepsi
+	&__svg-pepsi {
+		width: 80px;
+		height: 30px;
+	}
+	// .brands__svg-redbull
+	&__svg-redbull {
+		width: 80px;
+		height: 48px;
+	}
+	// .brands__svg-fanta
+	&__svg-fanta {
+		width: 80px;
+		height: 59px;
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+
+//========================================================================================================================================================
+.news {
+	@include adaptiveValue("padding-top", 70, 50);
+	@include adaptiveValue("padding-bottom", 70, 50);
+	// .news__container
+	&__container {
+	}
+	// .news__title
+	&__title {
+		@media (max-width: $mobile) {
+			&:not(:last-child) {
+				margin-bottom: rem(10);
+			}
+		}
+	}
+	// .news__header
+	&__header {
+		@media (min-width: $mobile) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 25);
+		}
+	}
+	// .news__all
+	&__all {
+	}
+	// .news__all-link
+	&__all-link {
+		position: relative;
+		font-weight: 700;
+		font-size: rem(14);
+		line-height: math.div(18, 14);
+		color: #63a60e;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 2.5px;
+			bottom: -2.5px;
+			left: 0;
+			border-bottom: 2.5px solid #63a60e;
+			transition: width 0.2s;
+		}
+		&:hover::before {
+			width: 100%;
+		}
+	}
+	// .news__body
+	&__body {
+		display: grid;
+		column-gap: rem(30);
+		@include adaptiveValue("row-gap", 30, 15);
+		justify-items: center;
+		@media (min-width: $mobileTwo) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $tablet) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	// .news__card
+	&__card {
+		background-color: $white;
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+		border-radius: 6px;
+		max-width: 410px;
+		transition: box-shadow 0.3s;
+	}
+	// .news__picture
+	&__picture {
+		position: relative;
+
+		img {
+			width: 100%;
+			border-radius: 6px 6px 0 0;
+			max-height: 240px;
+			max-width: 410px;
+			min-height: 200px;
+			object-fit: cover;
+		}
+	}
+	// .news__decor
+	&__decor {
+		position: absolute;
+		top: 0;
+		left: 20px;
+		width: 65px;
+		height: 75px;
+		background: $white;
+		border-radius: 0 0 4px 4px;
+		text-align: center;
+		padding: 14px 14px 10px 14px;
+	}
+	// .news__month
+	&__month {
+		font-weight: 700;
+		font-size: 10px;
+		line-height: math.div(14, 10);
+		text-align: center;
+		letter-spacing: 0.1em;
+	}
+	// .news__date
+	&__date {
+		font-family: "Ruda";
+		font-weight: 600;
+		font-size: 30px;
+		line-height: math.div(30, 30);
+		text-transform: uppercase;
+	}
+	// .news__description
+	&__description {
+		padding: 18px;
+	}
+	// .news__link-text@
+	&__link-text {
+		font-weight: 600;
+		line-height: math.div(24, 16);
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #63a60e;
+			}
+		}
+	}
+}
+//========================================================================================================================================================

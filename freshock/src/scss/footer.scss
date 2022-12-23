@@ -4,8 +4,8 @@
 	color: $white;
 	// .footer__container
 	&__container {
-		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-top: rem(30);
+		padding-bottom: rem(30);
 	}
 	// .footer__top
 	&__top {
@@ -20,8 +20,8 @@
 			flex-direction: column-reverse;
 		}
 		@media (max-width: $mobileSmall) {
-			padding-top: 25px;
-			padding-bottom: 25px;
+			padding-top: rem(25);
+			padding-bottom: rem(25);
 		}
 	}
 	// .footer__column
@@ -44,7 +44,7 @@
 	}
 	// .footer__subscribe
 	&__subscribe {
-		max-width: 310px;
+		max-width: rem(310);
 		width: 100%;
 		@media (max-width: $mobileSmall) {
 			margin: 0 auto;
@@ -68,7 +68,7 @@
 		@media (max-width: $mobile) {
 			padding-top: rem(25);
 			padding-bottom: rem(25);
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			border-bottom: rem(1) solid rgba(255, 255, 255, 0.1);
 		}
 		@media (max-width: $mobileSmall) {
 			justify-content: center;
@@ -77,16 +77,18 @@
 	}
 	// .footer__items
 	&__items {
-		max-width: 130px;
+		max-width: rem(130);
 		// .footer__items_display-none
 		&_display-none {
-			display: none;
+			@media (max-width: $mobileSmall) {
+				display: none;
+			}
 		}
 	}
 	// .footer__item
 	&__item {
 		&:not(:last-child) {
-			margin-bottom: 18px;
+			margin-bottom: rem(18);
 		}
 	}
 	// .footer__link
@@ -101,8 +103,8 @@
 		}
 		&:focus {
 			background: rgba(255, 255, 255, 0.0001);
-			box-shadow: 0px 0px 0px 3px #eff6e7;
-			border-radius: 3px;
+			box-shadow: 0 0 0 rem(3) #eff6e7;
+			border-radius: rem(3);
 		}
 		&:active {
 			color: $green-200;
@@ -129,7 +131,7 @@
 	// .footer__phone
 	&__phone {
 		&:not(:last-child) {
-			margin-bottom: 20px;
+			margin-bottom: rem(20);
 		}
 		transition: opacity 0.3s;
 		@media (any-hover: hover) {
@@ -139,8 +141,8 @@
 		}
 		&:focus {
 			background: rgba(255, 255, 255, 0.0001);
-			box-shadow: 0px 0px 0px 3px #eff6e7;
-			border-radius: 3px;
+			box-shadow: 0 0 0 rem(3) #eff6e7;
+			border-radius: rem(3);
 		}
 		&:active {
 			color: $green-200;
@@ -157,8 +159,8 @@
 			}
 			&:focus {
 				background: rgba(255, 255, 255, 0.0001);
-				box-shadow: 0px 0px 0px 3px #eff6e7;
-				border-radius: 3px;
+				box-shadow: 0 0 0 rem(3) #eff6e7;
+				border-radius: rem(3);
 			}
 			&:active {
 				color: $green-200;
@@ -172,7 +174,7 @@
 		column-gap: rem(12);
 		@media (max-width: $mobile) {
 			padding-bottom: rem(25);
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			border-bottom: rem(1) solid rgba(255, 255, 255, 0.1);
 		}
 		@media (max-width: $mobileSmall) {
 			width: 100%;
@@ -184,7 +186,7 @@
 	}
 	// .footer__link-social
 	&__link-social {
-		font-size: 28px;
+		font-size: rem(28);
 		transition: opacity 0.3s;
 		@media (any-hover: hover) {
 			&:hover {
@@ -235,12 +237,12 @@
 }
 
 .bottom {
-	padding-top: 30px;
-	padding-bottom: 30px;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding-top: rem(30);
+	padding-bottom: rem(30);
+	border-top: rem(1) solid rgba(255, 255, 255, 0.1);
 	@media (max-width: $mobileSmall) {
-		padding-top: 25px;
-		padding-bottom: 25px;
+		padding-top: rem(25);
+		padding-bottom: rem(25);
 	}
 
 	// .bottom__container
