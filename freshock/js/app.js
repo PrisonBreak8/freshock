@@ -403,68 +403,6 @@
             return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
         }
     };
-    function formRating() {
-        const ratings = document.querySelectorAll(".rating");
-        if (ratings.length > 0) initRatings();
-        function initRatings() {
-            let ratingActive, ratingValue;
-            for (let index = 0; index < ratings.length; index++) {
-                const rating = ratings[index];
-                initRating(rating);
-            }
-            function initRating(rating) {
-                initRatingVars(rating);
-                setRatingActiveWidth();
-                if (rating.classList.contains("rating_set")) setRating(rating);
-            }
-            function initRatingVars(rating) {
-                ratingActive = rating.querySelector(".rating__active");
-                ratingValue = rating.querySelector(".rating__value");
-            }
-            function setRatingActiveWidth(index = ratingValue.innerHTML) {
-                const ratingActiveWidth = index / .05;
-                ratingActive.style.width = `${ratingActiveWidth}%`;
-            }
-            function setRating(rating) {
-                const ratingItems = rating.querySelectorAll(".rating__item");
-                for (let index = 0; index < ratingItems.length; index++) {
-                    const ratingItem = ratingItems[index];
-                    ratingItem.addEventListener("mouseenter", (function(e) {
-                        initRatingVars(rating);
-                        setRatingActiveWidth(ratingItem.value);
-                    }));
-                    ratingItem.addEventListener("mouseleave", (function(e) {
-                        setRatingActiveWidth();
-                    }));
-                    ratingItem.addEventListener("click", (function(e) {
-                        initRatingVars(rating);
-                        if (rating.dataset.ajax) setRatingValue(ratingItem.value, rating); else {
-                            ratingValue.innerHTML = index + 1;
-                            setRatingActiveWidth();
-                        }
-                    }));
-                }
-            }
-            async function setRatingValue(value, rating) {
-                if (!rating.classList.contains("rating_sending")) {
-                    rating.classList.add("rating_sending");
-                    let response = await fetch("rating.json", {
-                        method: "GET"
-                    });
-                    if (response.ok) {
-                        const result = await response.json();
-                        const newRating = result.newRating;
-                        ratingValue.innerHTML = newRating;
-                        setRatingActiveWidth();
-                        rating.classList.remove("rating_sending");
-                    } else {
-                        alert("Ошибка");
-                        rating.classList.remove("rating_sending");
-                    }
-                }
-            }
-        }
-    }
     class SelectConstructor {
         constructor(props, data = null) {
             let defaultConfig = {
@@ -4145,6 +4083,162 @@
             destroy
         });
     }
+    function Autoplay({swiper, extendParams, on, emit}) {
+        let timeout;
+        swiper.autoplay = {
+            running: false,
+            paused: false
+        };
+        extendParams({
+            autoplay: {
+                enabled: false,
+                delay: 3e3,
+                waitForTransition: true,
+                disableOnInteraction: true,
+                stopOnLastSlide: false,
+                reverseDirection: false,
+                pauseOnMouseEnter: false
+            }
+        });
+        function run() {
+            if (!swiper.size) {
+                swiper.autoplay.running = false;
+                swiper.autoplay.paused = false;
+                return;
+            }
+            const $activeSlideEl = swiper.slides.eq(swiper.activeIndex);
+            let delay = swiper.params.autoplay.delay;
+            if ($activeSlideEl.attr("data-swiper-autoplay")) delay = $activeSlideEl.attr("data-swiper-autoplay") || swiper.params.autoplay.delay;
+            clearTimeout(timeout);
+            timeout = utils_nextTick((() => {
+                let autoplayResult;
+                if (swiper.params.autoplay.reverseDirection) if (swiper.params.loop) {
+                    swiper.loopFix();
+                    autoplayResult = swiper.slidePrev(swiper.params.speed, true, true);
+                    emit("autoplay");
+                } else if (!swiper.isBeginning) {
+                    autoplayResult = swiper.slidePrev(swiper.params.speed, true, true);
+                    emit("autoplay");
+                } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                    autoplayResult = swiper.slideTo(swiper.slides.length - 1, swiper.params.speed, true, true);
+                    emit("autoplay");
+                } else stop(); else if (swiper.params.loop) {
+                    swiper.loopFix();
+                    autoplayResult = swiper.slideNext(swiper.params.speed, true, true);
+                    emit("autoplay");
+                } else if (!swiper.isEnd) {
+                    autoplayResult = swiper.slideNext(swiper.params.speed, true, true);
+                    emit("autoplay");
+                } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                    autoplayResult = swiper.slideTo(0, swiper.params.speed, true, true);
+                    emit("autoplay");
+                } else stop();
+                if (swiper.params.cssMode && swiper.autoplay.running) run(); else if (false === autoplayResult) run();
+            }), delay);
+        }
+        function start() {
+            if ("undefined" !== typeof timeout) return false;
+            if (swiper.autoplay.running) return false;
+            swiper.autoplay.running = true;
+            emit("autoplayStart");
+            run();
+            return true;
+        }
+        function stop() {
+            if (!swiper.autoplay.running) return false;
+            if ("undefined" === typeof timeout) return false;
+            if (timeout) {
+                clearTimeout(timeout);
+                timeout = void 0;
+            }
+            swiper.autoplay.running = false;
+            emit("autoplayStop");
+            return true;
+        }
+        function pause(speed) {
+            if (!swiper.autoplay.running) return;
+            if (swiper.autoplay.paused) return;
+            if (timeout) clearTimeout(timeout);
+            swiper.autoplay.paused = true;
+            if (0 === speed || !swiper.params.autoplay.waitForTransition) {
+                swiper.autoplay.paused = false;
+                run();
+            } else [ "transitionend", "webkitTransitionEnd" ].forEach((event => {
+                swiper.$wrapperEl[0].addEventListener(event, onTransitionEnd);
+            }));
+        }
+        function onVisibilityChange() {
+            const document = ssr_window_esm_getDocument();
+            if ("hidden" === document.visibilityState && swiper.autoplay.running) pause();
+            if ("visible" === document.visibilityState && swiper.autoplay.paused) {
+                run();
+                swiper.autoplay.paused = false;
+            }
+        }
+        function onTransitionEnd(e) {
+            if (!swiper || swiper.destroyed || !swiper.$wrapperEl) return;
+            if (e.target !== swiper.$wrapperEl[0]) return;
+            [ "transitionend", "webkitTransitionEnd" ].forEach((event => {
+                swiper.$wrapperEl[0].removeEventListener(event, onTransitionEnd);
+            }));
+            swiper.autoplay.paused = false;
+            if (!swiper.autoplay.running) stop(); else run();
+        }
+        function onMouseEnter() {
+            if (swiper.params.autoplay.disableOnInteraction) stop(); else {
+                emit("autoplayPause");
+                pause();
+            }
+            [ "transitionend", "webkitTransitionEnd" ].forEach((event => {
+                swiper.$wrapperEl[0].removeEventListener(event, onTransitionEnd);
+            }));
+        }
+        function onMouseLeave() {
+            if (swiper.params.autoplay.disableOnInteraction) return;
+            swiper.autoplay.paused = false;
+            emit("autoplayResume");
+            run();
+        }
+        function attachMouseEvents() {
+            if (swiper.params.autoplay.pauseOnMouseEnter) {
+                swiper.$el.on("mouseenter", onMouseEnter);
+                swiper.$el.on("mouseleave", onMouseLeave);
+            }
+        }
+        function detachMouseEvents() {
+            swiper.$el.off("mouseenter", onMouseEnter);
+            swiper.$el.off("mouseleave", onMouseLeave);
+        }
+        on("init", (() => {
+            if (swiper.params.autoplay.enabled) {
+                start();
+                const document = ssr_window_esm_getDocument();
+                document.addEventListener("visibilitychange", onVisibilityChange);
+                attachMouseEvents();
+            }
+        }));
+        on("beforeTransitionStart", ((_s, speed, internal) => {
+            if (swiper.autoplay.running) if (internal || !swiper.params.autoplay.disableOnInteraction) swiper.autoplay.pause(speed); else stop();
+        }));
+        on("sliderFirstMove", (() => {
+            if (swiper.autoplay.running) if (swiper.params.autoplay.disableOnInteraction) stop(); else pause();
+        }));
+        on("touchEnd", (() => {
+            if (swiper.params.cssMode && swiper.autoplay.paused && !swiper.params.autoplay.disableOnInteraction) run();
+        }));
+        on("destroy", (() => {
+            detachMouseEvents();
+            if (swiper.autoplay.running) stop();
+            const document = ssr_window_esm_getDocument();
+            document.removeEventListener("visibilitychange", onVisibilityChange);
+        }));
+        Object.assign(swiper.autoplay, {
+            pause,
+            run,
+            start,
+            stop
+        });
+    }
     function initSliders() {
         if (document.querySelector(".main-page__slider")) new core(".main-page__slider", {
             modules: [ Navigation, Pagination ],
@@ -4161,6 +4255,41 @@
             navigation: {
                 prevEl: ".main-page__arrow_left",
                 nextEl: ".main-page__arrow_right"
+            },
+            on: {}
+        });
+        if (document.querySelector(".brands__slider")) new core(".brands__slider", {
+            modules: [ Autoplay ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 6,
+            spaceBetween: 0,
+            speed: 800,
+            autoHeight: false,
+            loop: true,
+            effect: "fade",
+            autoplay: {
+                delay: 3e3,
+                disableOnInteraction: false
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                    autoHeight: true
+                },
+                479: {
+                    slidesPerView: 3
+                },
+                767: {
+                    slidesPerView: 4
+                },
+                991: {
+                    slidesPerView: 5
+                },
+                1100: {
+                    slidesPerView: 6
+                }
             },
             on: {}
         });
@@ -4347,5 +4476,4 @@
         viewPass: false,
         autoHeight: false
     });
-    formRating();
 })();
