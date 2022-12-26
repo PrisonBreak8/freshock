@@ -1,0 +1,70 @@
+// Заголовки, общие БЄМ блоки и проче...
+//========================================================================================================================================================
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+//========================================================================================================================================================
+.page {
+	// .page__main
+	&__main {
+	}
+	// .page__services
+	&__services {
+	}
+	// .page__top-products
+	&__top-products {
+	}
+	// .page__banners
+	&__banners {
+	}
+	// .page__stock
+	&__stock {
+	}
+	// .page__brands
+	&__brands {
+	}
+	// .page__news
+	&__news {
+	}
+}
+//========================================================================================================================================================
+.title {
+	text-align: center;
+	// .title_text-left
+	&_text-left {
+		text-align: left;
+	}
+	// .title__value
+	&__value {
+		font-family: "Ruda";
+		font-weight: 600;
+		@include adaptiveValue("font-size", 32, 24);
+
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+	}
+}
+//========================================================================================================================================================
+.burger__btn {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		flex: 1 1 auto;
+	}
+}
+//========================================================================================================================================================
+.burger-block {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+	}
+}
